@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1209163742804102746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1209163742804102744}
+  - component: {fileID: 1209163742804102747}
+  - component: {fileID: 6243684182936937362}
+  - component: {fileID: 9214531921789303732}
+  - component: {fileID: 6580968874159130205}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1209163742804102744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209163742804102746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1209163742804102747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209163742804102746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff4e9dc1734ed440b33155729d66c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  column: 13
+  row: 20
+  spacing: 5
+  cellSize: 69.5
+  site: {fileID: 0}
+  siteContainer: {fileID: 0}
+  template: {fileID: 4405841694390331636, guid: 7ecc4056a324cd54c8b65a8ff6531ae1,
+    type: 3}
+  movableObject: {fileID: 0}
+  myStack: {fileID: 6243684182936937362}
+  speed: 3
+  block: {fileID: 2515756619575744306, guid: 79a1a69c8802572498086020ad6ffbe1, type: 3}
+  enableTask: 5
+  mouseDragging: 0
+  clearStack: 1
+  tileGrid: {fileID: 0}
+  showSteps: 0
+  showPath: 1
+  ui: {fileID: 0}
+--- !u!114 &6243684182936937362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209163742804102746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341697b2c3e9d6b4b9aa302f5b39b4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstObjectColor: {r: 0, g: 0, b: 1, a: 1}
+  midObjectColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  lastObjectColor: {r: 1, g: 0, b: 0, a: 1}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  changeMidObjectColor: {x: 0, y: 0, z: 0}
+--- !u!114 &9214531921789303732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209163742804102746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4540a7f4c9e5a39498e6f5249bdc8eac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rows: 10
+  Cols: 10
+  TilePrefab: {fileID: 4405841694390331636, guid: 7ecc4056a324cd54c8b65a8ff6531ae1,
+    type: 3}
+  TileColor_Default: {r: 1, g: 1, b: 1, a: 1}
+  TileColor_Expensive: {r: 0.19, g: 0.65, b: 0.43, a: 1}
+  TileColor_Infinity: {r: 0.37, g: 0.37, b: 0.37, a: 1}
+  TileColor_Start: {r: 0, g: 1, b: 0, a: 1}
+  TileColor_End: {r: 1, g: 0, b: 0, a: 1}
+  TileColor_Path: {r: 0.73, g: 0, b: 1, a: 1}
+  TileColor_Visited: {r: 0.75, g: 0.55, b: 0.38, a: 1}
+  TileColor_Frontier: {r: 0.4, g: 0.53, b: 0.8, a: 1}
+--- !u!114 &6580968874159130205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209163742804102746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98fea8ae84e40cf40a09032aa83ae73e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtNotice: {fileID: 0}
+  showSteps: {fileID: 0}
+  enableDrawWay: {fileID: 0}
+  enableDrawBlock: {fileID: 0}
+  changeStartEnd: {fileID: 0}
+  findWay: {fileID: 0}
