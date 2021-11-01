@@ -55,22 +55,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AIScripts\MinHeap.cs" />
-     <Compile Include="Assets\Scripts\AIScripts\PathFinder.cs" />
-     <Compile Include="Assets\Scripts\AIScripts\Tile.cs" />
-     <Compile Include="Assets\Scripts\AIScripts\TileGrid.cs" />
-     <Compile Include="Assets\Scripts\ButtonManager.cs" />
+     <Compile Include="Assets\Scripts\AI\AutoMap.cs" />
+     <Compile Include="Assets\Scripts\AI\MinHeap.cs" />
+     <Compile Include="Assets\Scripts\AI\PathFinder.cs" />
+     <Compile Include="Assets\Scripts\AI\Tile.cs" />
+     <Compile Include="Assets\Scripts\AI\TileGrid.cs" />
      <Compile Include="Assets\Scripts\DistanceCalculator.cs" />
-     <Compile Include="Assets\Scripts\Enums.cs" />
      <Compile Include="Assets\Scripts\Gameplay\GameController.cs" />
-     <Compile Include="Assets\Scripts\Mouse.cs" />
      <Compile Include="Assets\Scripts\MovableScript.cs" />
      <Compile Include="Assets\Scripts\MyStack.cs" />
-     <Compile Include="Assets\Scripts\ProcessBar.cs" />
-     <Compile Include="Assets\Scripts\SafeAreaFitter.cs" />
-     <Compile Include="Assets\Scripts\ToggleManager.cs" />
-     <Compile Include="Assets\Scripts\UIScript.cs" />
-     <Compile Include="Assets\Scripts\Values.cs" />
+     <Compile Include="Assets\Scripts\UI\ButtonManager.cs" />
+     <Compile Include="Assets\Scripts\UI\Mouse.cs" />
+     <Compile Include="Assets\Scripts\UI\ProcessBar.cs" />
+     <Compile Include="Assets\Scripts\UI\SafeAreaFitter.cs" />
+     <Compile Include="Assets\Scripts\UI\ToggleManager.cs" />
+     <Compile Include="Assets\Scripts\UI\UIScript.cs" />
+     <Compile Include="Assets\Scripts\Variables\Enums.cs" />
+     <Compile Include="Assets\Scripts\Variables\Values.cs" />
  <Reference Include="UnityEngine">
  <HintPath>D:/UNITY/2019.4.21f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
