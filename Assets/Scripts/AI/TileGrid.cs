@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TileGrid : MonoBehaviour
 {
@@ -46,13 +45,21 @@ public class TileGrid : MonoBehaviour
 
     public void SetStartPos(Tile tile)
     {
-        _start = tile;
-        tile.SetColor(TileColor_Start);
+        if (tile.Weight == Values.TileWeight_Default)
+        {
+            _start = tile;
+            tile.SetColor(TileColor_Start);
+        }
     }
 
     public bool IsStart(Tile tile)
     {
         return tile == _start;
+    }
+
+    public bool IsEnd(Tile tile)
+    {
+        return tile == _end;
     }
 
     public bool IsRunningState()
@@ -70,8 +77,11 @@ public class TileGrid : MonoBehaviour
 
     public void SetEndPos(Tile tile)
     {
-        _end = tile;
-        tile.SetColor(TileColor_End);
+        if (tile.Weight == Values.TileWeight_Default)
+        {
+            _end = tile;
+            tile.SetColor(TileColor_End);
+        }
     }
 
     public void AstarFindWay()

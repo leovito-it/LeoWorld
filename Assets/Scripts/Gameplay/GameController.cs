@@ -38,6 +38,7 @@ public class GameController : MonoBehaviour
     public bool showSteps = false;
     public bool showPath = true;
 
+    public TileData tileManager;
     [HideInInspector] public UIScript ui;
 
     void Start()
@@ -50,6 +51,8 @@ public class GameController : MonoBehaviour
         Components_Setup();
 
         ValuesSync();
+
+        LoadData();
     }
 
     //----- UI SETTINGS - START
@@ -72,6 +75,29 @@ public class GameController : MonoBehaviour
         tileGrid = GetComponent<TileGrid>();
         TileGridSync();
         tileGrid.CreateTilemap(site);
+    }
+
+    void LoadData()
+    {
+        tileManager = (TileData)Resources.LoadAll("Data").GetValue( Random.Range(0, Resources.LoadAll("Data").Length-1) );
+        // load block
+        foreach (Vector2 tile in tileManager.blockList)
+        {
+            tileGrid.CreateExpensive((int)tile.x, (int)tile.y);
+        }
+
+        if (tileManager.start_pos.x >= 0 && tileManager.start_pos.y >= 0)
+        {
+            tileGrid.SetStartPos(tileGrid.GetTile((int)tileManager.start_pos.x, (int)tileManager.start_pos.y));
+        }
+
+        if (tileManager.end_pos.x >= 0 && tileManager.end_pos.y >= 0)
+        {
+            tileGrid.SetEndPos(tileGrid.GetTile((int)tileManager.end_pos.x, (int)tileManager.end_pos.y));
+        }
+
+        if (tileGrid.IsRunningState())
+            enableTask = Enums.EnableTask.ReadyForRunning;
     }
 
     void ChangeSizeToFit()

@@ -71,4 +71,24 @@ public class ButtonManager : MonoBehaviour
         controller.ValuesSync();
         controller.ui.Sync();
     }
+
+    public void SaveMyDraw()
+    {
+        controller = FindObjectOfType<GameController>();
+        controller.tileManager.blockList.RemoveRange(0, controller.tileManager.blockList.Count) ;
+        foreach(Tile tile in controller.tileGrid.Tiles)
+        {
+            if (controller.tileGrid.IsStart(tile))
+                controller.tileManager.start_pos = new Vector2(tile.Row, tile.Col);
+            else
+            if (controller.tileGrid.IsEnd(tile))
+                controller.tileManager.end_pos = new Vector2(tile.Row, tile.Col);
+
+            if (tile.Weight == Values.TileWeight_Default)
+                continue;
+            else
+                if (tile.Weight == Values.TileWeight_Expensive)
+                controller.tileManager.blockList.Add(new Vector2(tile.Row, tile.Col));
+        } 
+    }
 }

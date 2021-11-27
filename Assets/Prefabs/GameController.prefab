@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1209163742804102747}
   - component: {fileID: 6243684182936937362}
   - component: {fileID: 9214531921789303732}
-  - component: {fileID: 6580968874159130205}
+  - component: {fileID: 1281552760}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff4e9dc1734ed440b33155729d66c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  column: 13
-  row: 20
+  column: 8
+  row: 10
   spacing: 5
   cellSize: 69.5
   site: {fileID: 0}
@@ -61,9 +61,10 @@ MonoBehaviour:
   enableTask: 5
   mouseDragging: 0
   clearStack: 1
-  tileGrid: {fileID: 0}
+  tileGrid: {fileID: 9214531921789303732}
   showSteps: 0
   showPath: 1
+  blockManager: {fileID: 11400000, guid: ef8e7387a8c6d0d42b1ce27cd56ac302, type: 2}
   ui: {fileID: 0}
 --- !u!114 &6243684182936937362
 MonoBehaviour:
@@ -78,10 +79,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstObjectColor: {r: 0, g: 0, b: 1, a: 1}
-  midObjectColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  lastObjectColor: {r: 1, g: 0, b: 0, a: 1}
+  midObjectColor: {r: 0, g: 1, b: 0.94148874, a: 1}
+  lastObjectColor: {r: 0.9150943, g: 0.26805294, b: 0.09927912, a: 1}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  changeMidObjectColor: {x: 0, y: 0, z: 0}
+  changeMidObjectColor: {x: 0, y: 0.01, z: 0}
 --- !u!114 &9214531921789303732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +107,7 @@ MonoBehaviour:
   TileColor_Path: {r: 0.73, g: 0, b: 1, a: 1}
   TileColor_Visited: {r: 0.75, g: 0.55, b: 0.38, a: 1}
   TileColor_Frontier: {r: 0.4, g: 0.53, b: 0.8, a: 1}
---- !u!114 &6580968874159130205
+--- !u!114 &1281552760
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

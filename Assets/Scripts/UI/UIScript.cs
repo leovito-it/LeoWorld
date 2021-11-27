@@ -18,9 +18,9 @@ public class UIScript : MonoBehaviour
     void EnableButtons()
     {
         if (enableDrawWay != null)      enableDrawWay.enabled = true;
-        if (enableDrawBlock != null)  enableDrawBlock.enabled = true;
-        if (changeStartEnd != null)  changeStartEnd.enabled = true;
-        if (findWay != null)  findWay.enabled = true;
+        if (enableDrawBlock != null)    enableDrawBlock.enabled = true;
+        if (changeStartEnd != null)     changeStartEnd.enabled = true;
+        if (findWay != null)            findWay.enabled = true;
     }
 
     public void SetButtonsState()
