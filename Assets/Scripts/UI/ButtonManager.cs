@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -75,20 +76,30 @@ public class ButtonManager : MonoBehaviour
     public void SaveMyDraw()
     {
         controller = FindObjectOfType<GameController>();
-        controller.tileManager.blockList.RemoveRange(0, controller.tileManager.blockList.Count) ;
+        TileData tileD = new TileData();
+        tileD.blockList = new System.Collections.Generic.List<Vector2>();
+
         foreach(Tile tile in controller.tileGrid.Tiles)
         {
             if (controller.tileGrid.IsStart(tile))
-                controller.tileManager.start_pos = new Vector2(tile.Row, tile.Col);
+                tileD.start_pos = new Vector2(tile.Row, tile.Col);
             else
             if (controller.tileGrid.IsEnd(tile))
-                controller.tileManager.end_pos = new Vector2(tile.Row, tile.Col);
+                tileD.end_pos = new Vector2(tile.Row, tile.Col);
 
             if (tile.Weight == Values.TileWeight_Default)
                 continue;
             else
                 if (tile.Weight == Values.TileWeight_Expensive)
-                controller.tileManager.blockList.Add(new Vector2(tile.Row, tile.Col));
-        } 
+                tileD.blockList.Add(new Vector2(tile.Row, tile.Col));
+        }
+
+        // Create json file
+        string json = JsonUtility.ToJson(tileD);
+        string dataPath = Application.dataPath + "/Resources/Data/data.txt";
+
+        File.AppendAllText(dataPath, json + "\n");
+        
+        
     }
 }

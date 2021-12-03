@@ -8,11 +8,11 @@ public class Values : ScriptableObject
     public static string POINTER = "Pointer";
     public static string MAIN_CANVAS = "MainCanvas";
     public static string EMPTY_STRING = "";
-    public static string NOTICE_SELECT_START_POS = "Select start position"; 
-    public static string NOTICE_SELECT_END_POS = "Select end position";
-    public static string NOTICE_DRAW_BLOCK = "Draw block to make your maze";
-    public static string NOTICE_DRAW_WAY = "Let solve the maze";
-    public static string NOTICE_CAN_RUNNING = "Press run button !!!";
+    public static string NOTICE_SELECT_START_POS = "Chọn vị trí bắt đầu"; 
+    public static string NOTICE_SELECT_END_POS = "Chọn vị trí đích";
+    public static string NOTICE_DRAW_BLOCK = "Vẽ tường nào !!";
+    public static string NOTICE_DRAW_WAY = "Giải mê cung đi";
+    public static string NOTICE_CAN_RUNNING = "Có thể bấm chạy rồi đó !";
 
     public static bool SHOW_STEPS = true;
     public static bool SHOW_PATH = true;

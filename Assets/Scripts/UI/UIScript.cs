@@ -15,7 +15,7 @@ public class UIScript : MonoBehaviour
 
     GameController controller;
 
-    void EnableButtons()
+    private void EnableButtons()
     {
         if (enableDrawWay != null)      enableDrawWay.enabled = true;
         if (enableDrawBlock != null)    enableDrawBlock.enabled = true;
@@ -23,7 +23,7 @@ public class UIScript : MonoBehaviour
         if (findWay != null)            findWay.enabled = true;
     }
 
-    public void SetButtonsState()
+    private void UpdateButtonsState()
     {
         controller = GetComponent<GameController>();
 
@@ -61,7 +61,7 @@ public class UIScript : MonoBehaviour
         glg.cellSize = new Vector2(cellSize, cellSize);
     }
 
-    public void SetNoticeText()
+    private void UpdateNoticeText()
     {
         controller = GetComponent<GameController>();
         string text = "";
@@ -91,7 +91,7 @@ public class UIScript : MonoBehaviour
 
     public void Sync()
     {
-        SetButtonsState();
-        SetNoticeText();
+        UpdateButtonsState();
+        UpdateNoticeText();
     }
 }

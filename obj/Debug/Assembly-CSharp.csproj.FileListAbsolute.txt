@@ -310,3 +310,5 @@ E:\2DGame\LeoWorld\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 E:\2DGame\LeoWorld\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 E:\2DGame\LeoWorld\obj\Debug\Assembly-CSharp.dll
 E:\2DGame\LeoWorld\obj\Debug\Assembly-CSharp.pdb
+E:\2DGame\LeoWorld\Temp\bin\Debug\Unity.DeviceSimulator.Editor.dll
+E:\2DGame\LeoWorld\Temp\bin\Debug\Unity.DeviceSimulator.Editor.pdb

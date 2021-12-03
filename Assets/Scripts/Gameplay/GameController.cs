@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -78,8 +79,17 @@ public class GameController : MonoBehaviour
     }
 
     void LoadData()
-    {
-        tileManager = (TileData)Resources.LoadAll("Data").GetValue( Random.Range(0, Resources.LoadAll("Data").Length-1) );
+    {    
+        // read data      
+        tileManager = new TileData();
+
+        string dataPath = Application.dataPath + "/Resources/Data/data.txt";
+        if (!File.Exists(dataPath))
+            return;
+
+        string[] json = File.ReadAllLines(dataPath);
+        JsonUtility.FromJsonOverwrite(json[Random.Range(0, json.Length-1)], tileManager);
+
         // load block
         foreach (Vector2 tile in tileManager.blockList)
         {
@@ -96,8 +106,14 @@ public class GameController : MonoBehaviour
             tileGrid.SetEndPos(tileGrid.GetTile((int)tileManager.end_pos.x, (int)tileManager.end_pos.y));
         }
 
+        // UI update
         if (tileGrid.IsRunningState())
+        {
             enableTask = Enums.EnableTask.ReadyForRunning;
+            ui.Sync();
+        }
+       
+        Debug.Log(enableTask.ToString());
     }
 
     void ChangeSizeToFit()

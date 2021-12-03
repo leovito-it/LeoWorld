@@ -67,11 +67,11 @@
     <Compile Include="Assets\Scripts\AI\PathFinder.cs" />
     <Compile Include="Assets\Scripts\AI\Tile.cs" />
     <Compile Include="Assets\Scripts\AI\TileGrid.cs" />
-    <Compile Include="Assets\Scripts\DistanceCalculator.cs" />
+    <Compile Include="Assets\Scripts\CustomS\DistanceCalculator.cs" />
+    <Compile Include="Assets\Scripts\CustomS\MovableScript.cs" />
+    <Compile Include="Assets\Scripts\CustomS\MyStack.cs" />
+    <Compile Include="Assets\Scripts\CustomS\TileData.cs" />
     <Compile Include="Assets\Scripts\Gameplay\GameController.cs" />
-    <Compile Include="Assets\Scripts\MovableScript.cs" />
-    <Compile Include="Assets\Scripts\MyStack.cs" />
-    <Compile Include="Assets\Scripts\TileData.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\UI\Mouse.cs" />
     <Compile Include="Assets\Scripts\UI\ProcessBar.cs" />
@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\UI\UIScript.cs" />
     <Compile Include="Assets\Scripts\Variables\Enums.cs" />
     <Compile Include="Assets\Scripts\Variables\Values.cs" />
+    <None Include="Assets\Resources\Data\data.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:/UNITY/2019.4.21f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
