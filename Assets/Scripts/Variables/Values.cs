@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Values",menuName ="Values", order = 1)]
 public class Values : ScriptableObject
 {
+    public static string DATA_PATH = Application.persistentDataPath;
+    public static string FILE_NAME = "data.txt";
     public static string POINTER = "Pointer";
     public static string MAIN_CANVAS = "MainCanvas";
     public static string EMPTY_STRING = "";

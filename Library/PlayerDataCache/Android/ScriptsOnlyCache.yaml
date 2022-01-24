@@ -22,6 +22,9 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
+    Unity.DeviceSimulator.Editor.dll:
+    - UnityEditor.DeviceSimulation.DeviceInfoAsset
+    - UnityEditor.DeviceSimulation.SimulatorWindow
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
@@ -65,11 +68,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
-    - Class: 74
-      Script: {instanceID: 0}
     - Class: 81
-      Script: {instanceID: 0}
-    - Class: 91
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
@@ -80,11 +79,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11248}
     - Class: 114
-      Script: {instanceID: 11274}
+      Script: {instanceID: 11250}
     - Class: 114
-      Script: {instanceID: 11578}
+      Script: {instanceID: 11276}
     - Class: 114
-      Script: {instanceID: 11730}
+      Script: {instanceID: 11580}
     - Class: 114
       Script: {instanceID: 11822}
     - Class: 114
@@ -94,23 +93,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12340}
     - Class: 114
-      Script: {instanceID: 13188}
+      Script: {instanceID: 13190}
     - Class: 114
-      Script: {instanceID: 13398}
+      Script: {instanceID: 13400}
+    - Class: 114
+      Script: {instanceID: 13688}
     - Class: 114
       Script: {instanceID: 13838}
     - Class: 114
       Script: {instanceID: 13944}
     - Class: 114
-      Script: {instanceID: 14472}
+      Script: {instanceID: 14346}
     - Class: 114
-      Script: {instanceID: 14492}
+      Script: {instanceID: 14476}
     - Class: 114
-      Script: {instanceID: 14534}
+      Script: {instanceID: 14496}
     - Class: 114
-      Script: {instanceID: 31956}
-    - Class: 114
-      Script: {instanceID: 33402}
+      Script: {instanceID: 14538}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -155,19 +154,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11246}
     - Class: 114
-      Script: {instanceID: 11248}
+      Script: {instanceID: 11250}
     - Class: 114
-      Script: {instanceID: 11274}
+      Script: {instanceID: 11276}
     - Class: 114
-      Script: {instanceID: 11372}
+      Script: {instanceID: 11374}
     - Class: 114
-      Script: {instanceID: 11578}
+      Script: {instanceID: 11580}
     - Class: 114
       Script: {instanceID: 12318}
     - Class: 114
       Script: {instanceID: 13838}
     - Class: 114
-      Script: {instanceID: 14472}
+      Script: {instanceID: 14476}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -191,6 +190,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 7ab0e790220bdca831fdd886b339039d
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: GridLayoutGroup
   - hash:
       serializedVersion: 2
       Hash: 5f1752ed2092162f016c19510c28a8b9
@@ -293,12 +298,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
-  - hash:
-      serializedVersion: 2
-      Hash: 7ab0e790220bdca831fdd886b339039d
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: GridLayoutGroup
   - hash:
       serializedVersion: 2
       Hash: e18bb8659e89bed03608e3f5664ed9e3
@@ -583,6 +582,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ToggleManager
+  - hash:
+      serializedVersion: 2
       Hash: 6939772cb3ce775a8e8d99f332534491
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -607,10 +612,16 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 2d3fe9a181fa5d3299aa3ea5f335b8c6
+      Hash: 2c7f257957cbdb5e6b30903a1c48ad1d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AutoMap
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -641,6 +652,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayModeRunnerCallback
+  - hash:
+      serializedVersion: 2
+      Hash: 2f88d187266a7742e3e8974aca51bbd5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIScript
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -725,20 +742,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ToggleManager
-  - hash:
-      serializedVersion: 2
-      Hash: 2f88d187266a7742e3e8974aca51bbd5
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UIScript
   platform: 13
   scenePathNames:
   - Assets/Scenes/Start.unity
   - Assets/Scenes/MAZE.unity
-  playerPath: E:/GameBuildAndroid/Maze_ver3.apk
+  playerPath: E:/GameBuildAndroid/Maze_ver4.apk

@@ -96,8 +96,8 @@ public class ButtonManager : MonoBehaviour
 
         // Create json file
         string json = JsonUtility.ToJson(tileD);
-        string dataPath = Application.dataPath + "/Resources/Data/data.txt";
-
+        string dataPath = Values.DATA_PATH + Values.FILE_NAME;
+       
         File.AppendAllText(dataPath, json + "\n");
         
         

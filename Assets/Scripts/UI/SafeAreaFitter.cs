@@ -5,9 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(RectTransform))]
 public class SafeAreaFitter : MonoBehaviour
 {
-    private void Update()
+    private void Start()
     {
-
         var rectTransform = GetComponent<RectTransform>();
 
         var safeArea = Screen.safeArea;
@@ -20,5 +19,7 @@ public class SafeAreaFitter : MonoBehaviour
 
         rectTransform.anchorMin = anchorMin;
         rectTransform.anchorMax = anchorMax;
+
+        Screen.orientation = ScreenOrientation.Portrait;
     }
 }

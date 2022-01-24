@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour
     public bool showSteps = false;
     public bool showPath = true;
 
-    public TileData tileManager;
+    public TileData tileData;
     [HideInInspector] public UIScript ui;
 
     void Start()
@@ -81,29 +81,30 @@ public class GameController : MonoBehaviour
     void LoadData()
     {    
         // read data      
-        tileManager = new TileData();
+        tileData = new TileData();
 
-        string dataPath = Application.dataPath + "/Resources/Data/data.txt";
+        string dataPath = Values.DATA_PATH + Values.FILE_NAME;
+        Debug.Log(dataPath);
         if (!File.Exists(dataPath))
             return;
 
         string[] json = File.ReadAllLines(dataPath);
-        JsonUtility.FromJsonOverwrite(json[Random.Range(0, json.Length-1)], tileManager);
+        JsonUtility.FromJsonOverwrite(json[Random.Range(0, json.Length)], tileData);
 
         // load block
-        foreach (Vector2 tile in tileManager.blockList)
+        foreach (Vector2 tile in tileData.blockList)
         {
             tileGrid.CreateExpensive((int)tile.x, (int)tile.y);
         }
 
-        if (tileManager.start_pos.x >= 0 && tileManager.start_pos.y >= 0)
+        if (tileData.start_pos.x >= 0 && tileData.start_pos.y >= 0)
         {
-            tileGrid.SetStartPos(tileGrid.GetTile((int)tileManager.start_pos.x, (int)tileManager.start_pos.y));
+            tileGrid.SetStartPos(tileGrid.GetTile((int)tileData.start_pos.x, (int)tileData.start_pos.y));
         }
 
-        if (tileManager.end_pos.x >= 0 && tileManager.end_pos.y >= 0)
+        if (tileData.end_pos.x >= 0 && tileData.end_pos.y >= 0)
         {
-            tileGrid.SetEndPos(tileGrid.GetTile((int)tileManager.end_pos.x, (int)tileManager.end_pos.y));
+            tileGrid.SetEndPos(tileGrid.GetTile((int)tileData.end_pos.x, (int)tileData.end_pos.y));
         }
 
         // UI update

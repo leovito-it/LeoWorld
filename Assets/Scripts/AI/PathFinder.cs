@@ -5,18 +5,19 @@ public static class PathFinder
 {
     public static List<Tile> FindPath_AStar(TileGrid grid, Tile start, Tile end, List<IVisualStep> outSteps)
     { 
-         // Visual stuff
-            outSteps.Add(new MarkStartTileStep(start));
-            outSteps.Add(new MarkEndTileStep(end));
-            // ~Visual stuff
+         // hiển thị tiến trình
+         outSteps.Add(new MarkStartTileStep(start));
+         outSteps.Add(new MarkEndTileStep(end));
 
+        // cài đặt lại chi phí toàn bảng
         foreach (var tile in grid.Tiles)
         {
             tile.Cost = int.MaxValue;
         }
 
-        start.Cost = 0;
+        start.Cost = 0; // đặt chi phí ô bắt đầu =0
 
+        // so sánh heuristic, tính chi phí của đường dẫn từ lhs, rhs đến mục tiêu(end)
         Comparison<Tile> heuristicComparison = (lhs, rhs) =>
         {
             float lhsCost = lhs.Cost + GetEuclideanHeuristicCost(lhs, end);
@@ -25,25 +26,26 @@ public static class PathFinder
             return lhsCost.CompareTo(rhsCost);
         };
 
+        // minheap lưu trữ các đơn vị liền kề của 1 Tile(theo 4 phương, hoặc tám hướng)
         MinHeap<Tile> frontier = new MinHeap<Tile>(heuristicComparison);
         frontier.Add(start);
 
+        // hashset lưu trữ các tile đã được duyệt
         HashSet<Tile> visited = new HashSet<Tile>();
         visited.Add(start);
 
         start.PrevTile = null;
 
-        while (frontier.Count > 0)
+        while (frontier.Count > 0) // lấy tile từ từng hướng của Tile đang duyệt
         {
             Tile current = frontier.Remove();
 
+            // hiển thị tiến trình
             if (Values.SHOW_STEPS)
-            // Visual stuff
             if (current != start && current != end)
             {
                 outSteps.Add(new VisitTileStep(current));
             }
-            // ~Visual stuff
 
             if (current == end)
             {
@@ -52,33 +54,35 @@ public static class PathFinder
 
             foreach (var neighbor in grid.GetNeighbors(current))
             {
-                int newNeighborCost = current.Cost + neighbor.Weight;
-                if (newNeighborCost < neighbor.Cost)
+                int newNeighborCost = current.Cost + neighbor.Weight; 
+                // xác định tile có chi phí đến mục tiêu rẻ nhất(đường =1. tường = 100)
+                if (newNeighborCost < neighbor.Cost) // đúng trong trường hợp neighbor là Tile chưa được duyệt
                 {
-                    neighbor.Cost = newNeighborCost;
-                    neighbor.PrevTile = current;
+                    neighbor.Cost = newNeighborCost; // trả lại chi phí cho neighbor
+                    neighbor.PrevTile = current;    // lưu Tile trước đó (để truy vết)
                 }
 
-                if (!visited.Contains(neighbor))
+                if (!visited.Contains(neighbor)) // nếu chưa được duyệt/lưu -> tiến hành lưu
                 {
                     frontier.Add(neighbor);
                     visited.Add(neighbor);
 
                     if (Values.SHOW_STEPS)
-                    // Visual stuff
+                    // hiển thị tiến trình
                     if (neighbor != end)
                     {
                         outSteps.Add(new PushTileInFrontierStep(neighbor, neighbor.Cost));
                     }
-                    // ~Visual stuff
+                
                 }
             }
         }
 
+        // truy ngược từ end 
         List<Tile> path = BacktrackToPath(end);
 
         if (Values.SHOW_PATH)
-        // Visual stuff
+        // hiển thị tiến trình
         foreach (var tile in path)
         {
             if (tile == start || tile == end)
@@ -88,7 +92,6 @@ public static class PathFinder
 
             outSteps.Add(new MarkPathTileStep(tile));
         }
-        // ~Visual stuff
 
         return path;
     }
